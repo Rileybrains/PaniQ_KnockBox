@@ -6,11 +6,11 @@ const int relayPin = A1;
 int micInputVal = 0;    // set value to 0
 
 // Timing
-const int globalLoopMs = 2; // duration of loop delay
+const int globalLoopMs = 1; // duration of loop delay
 int periodClockMs = 0; // period measuring clock
-const int pollPeriodMs = 24; // duration of polling period 
-const int postKnockDelayMs = 200; // ms of delay following knock detection
-const int winDelayMs = 10000; // ms of delay upon completion
+const int pollPeriodMs = 20; // duration of polling period 
+const int postKnockDelayMs = 150; // ms of delay following knock detection
+const int winDelayMs = 5000; // ms of delay upon completion
 
 // Mic Logic
 int maxVolumeLastPeriod = 0; // per-period maximum value 
@@ -42,11 +42,6 @@ void loop()
   // Read microphone level
   micInputVal = analogRead(microphonePin);
   insertAndShiftLeft(pollValues, pollValueLen, micInputVal);
-
-  // Check and update max volume
-  // if (micInputVal > maxVolumeLastPeriod) {
-  //   maxVolumeLastPeriod = micInputVal;
-  // }
 
   // Loop Delay and Clock Increments
   delay(globalLoopMs);  //delay 2ms

@@ -1,3 +1,10 @@
+/* PaniQ Escape
+ * Wizarding Room Entry Door Knocking Puzzle Controller
+ * Riley Waite
+ * June '23
+ * riley.s.waite@gmail.com
+ */
+
 // If set 'true', debugging statements will be printed over serial
 #define DEBUG true
 
